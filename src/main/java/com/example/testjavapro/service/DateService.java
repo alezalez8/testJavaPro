@@ -29,8 +29,8 @@ public class DateService {
         return daysBetween(newYear.getTime(), userDate.getTime());
     }
 
-    public int daysBetween(Date d1, Date d2){
-        return (int)( (d1.getTime() - d2.getTime()) / (1000 * 60 * 60 * 24));
+    public int daysBetween(Date newYear, Date userDate){
+        return (int)( (newYear.getTime() - userDate.getTime()) / (1000 * 60 * 60 * 24));
     }
 
 }
