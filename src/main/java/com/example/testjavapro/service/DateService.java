@@ -12,8 +12,8 @@ import java.util.GregorianCalendar;
 @Service
 public class DateService {
 
-
     public  int getDays(String date) throws ParseException {
+
 
         Calendar userDate = new GregorianCalendar();
         Calendar newYear = new GregorianCalendar();
@@ -21,11 +21,10 @@ public class DateService {
 
         SimpleDateFormat sdf = new SimpleDateFormat("ddMMyyyy");
         Date userDat = sdf.parse(date);
-
         userDate.setTime(userDat);
 
         int currentYear = userDate.get(Calendar.YEAR) + 1;
-        newYear.set(currentYear,0,0);
+        newYear.set(currentYear, Calendar.JANUARY,0);
 
         return daysBetween(newYear.getTime(), userDate.getTime());
     }
